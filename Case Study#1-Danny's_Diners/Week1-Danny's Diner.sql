@@ -126,10 +126,6 @@ inner join members as mem on mem.customer_id = sls.customer_id
 where order_date <= '2021-01-31'
 group by sls.customer_id;
 
-select * from sales;
-select * from members;
-select * from menu;
-
 -- Bonus Questions
 select s.customer_id,s.order_date,mu.product_name,mu.price,
 case when order_date>=join_date then 'Y' else 'N' end as member
