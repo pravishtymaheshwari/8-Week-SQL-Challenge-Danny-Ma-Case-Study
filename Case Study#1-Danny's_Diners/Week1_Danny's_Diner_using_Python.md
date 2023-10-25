@@ -14,131 +14,7 @@ Conn = Engine.connect()
 df_sales = pd.read_sql_query('select * from sales',Conn)
 df_members = pd.read_sql_query('select * from members',Conn)
 df_menu = pd.read_sql_query('select * from menu',Conn)
-
-df_sales
 ```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>customer_id</th>
-      <th>order_date</th>
-      <th>product_id</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>A</td>
-      <td>2021-01-01</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>A</td>
-      <td>2021-01-01</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>A</td>
-      <td>2021-01-07</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>A</td>
-      <td>2021-01-10</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>A</td>
-      <td>2021-01-11</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>A</td>
-      <td>2021-01-11</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>B</td>
-      <td>2021-01-01</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>B</td>
-      <td>2021-01-02</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>B</td>
-      <td>2021-01-04</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>B</td>
-      <td>2021-01-11</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>B</td>
-      <td>2021-01-16</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>B</td>
-      <td>2021-02-01</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>C</td>
-      <td>2021-01-01</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>C</td>
-      <td>2021-01-01</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>C</td>
-      <td>2021-01-07</td>
-      <td>3</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
 
 
 Case Study Questions
@@ -156,19 +32,7 @@ df_merged
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -209,19 +73,6 @@ df_sales.groupby('customer_id')['order_date'].nunique().reset_index()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -265,19 +116,6 @@ df_merged[df_merged['rnk']==1].groupby('customer_id')['product_name'].apply(lamb
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -320,19 +158,6 @@ df_merged[df_merged['total_purchases'] == df_merged['total_purchases'].max()]
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -367,19 +192,6 @@ df_merged.groupby('customer_id')['product_name'].apply(lambda x: ','.join(x)).re
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -423,19 +235,6 @@ df_merged[df_merged['rnk']==1][['customer_id','product_name']].sort_values(by='c
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -474,19 +273,6 @@ df_merged[df_merged['rnk']==1].groupby('customer_id')['product_name'].apply(lamb
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -526,19 +312,6 @@ df_merged
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -582,19 +355,6 @@ df_merged.groupby('customer_id')['price'].sum().reset_index(name='total_points')
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -640,19 +400,6 @@ df_merged[pd.to_datetime(df_merged['order_date'])<= pd.to_datetime('2021-01-31')
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -693,19 +440,6 @@ df_merged.sort_values(['customer_id','order_date','product_name'])
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -890,19 +624,6 @@ df_merged.sort_values(['customer_id','order_date'])
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
