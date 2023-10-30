@@ -2,7 +2,7 @@
 This repository comprises my solutions to the case studies found in the [8WeekSQLChallenge](https://8weeksqlchallenge.com/). The 8 Week SQL Challenge presents 8 distinct SQL challenges. In addition to solving these case studies using SQL, I have also provided Python solutions.
 
 
-In each case study folder, you will find one .sql for creating the database and two .md solution files, one written in SQL and another in Python.
+In each case study folder, you will find one .md for creating the database(and data cleaning) and two .md solution files, one written in SQL and another in Python.
 
 Case Studies:
 
