@@ -1,3 +1,4 @@
+```sql
 --1. What is the total amount each customer spent at the restaurant?
 select sls.customer_id, concat('$',sum(price)) as total_amount_spent 
 from members as mem
