@@ -1,3 +1,5 @@
+## Database Tables
+```sql
 CREATE TABLE plans (
   plan_id INTEGER,
   plan_name VARCHAR(13),
@@ -12,9 +14,16 @@ VALUES
   ('2', 'pro monthly', '19.90'),
   ('3', 'pro annual', '199'),
   ('4', 'churn', null);
+```
+| plan_id | plan_name        | price   |
+| ------- | ---------------- | ------- |
+| 0       | trial            | 0.00    |
+| 1       | basic monthly    | 9.90    |
+| 2       | pro monthly      | 19.90   |
+| 3       | pro annual       | 199.00  |
+| 4       | churn            | NULL    |
 
-select * from plans;
-
+```sql
 CREATE TABLE subscriptions (
   customer_id INTEGER,
   plan_id INTEGER,
@@ -2678,6 +2687,30 @@ INSERT INTO subscriptions (customer_id, plan_id, start_date) VALUES ('2', '0', '
   ('1000', '0', '2020-03-19'),
   ('1000', '2', '2020-03-26'),
   ('1000', '4', '2020-06-04'); 
+```
+** Displaying the first 20 records**
 
+| customer_id | plan_id | start_date  |
+|------------|---------|------------|
+| 1          | 0       | 2020-08-01 |
+| 1          | 1       | 2020-08-08 |
+| 2          | 0       | 2020-09-20 |
+| 2          | 3       | 2020-09-27 |
+| 3          | 0       | 2020-01-13 |
+| 3          | 1       | 2020-01-20 |
+| 4          | 0       | 2020-01-17 |
+| 4          | 1       | 2020-01-24 |
+| 4          | 4       | 2020-04-21 |
+| 5          | 0       | 2020-08-03 |
+| 5          | 1       | 2020-08-10 |
+| 6          | 0       | 2020-12-23 |
+| 6          | 1       | 2020-12-30 |
+| 6          | 4       | 2021-02-26 |
+| 7          | 0       | 2020-02-05 |
+| 7          | 1       | 2020-02-12 |
+| 7          | 2       | 2020-05-22 |
+| 8          | 0       | 2020-06-11 |
+| 8          | 1       | 2020-06-18 |
+| 8          | 2       | 2020-08-03 |
 
 
